@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Valentine's Day</title>
+    <style>
+        body {
+            background-image: url(cop.jpg);
+        	background-size: cover;
+            background-repeat: no-repeat;
+            font-family: Arial, sans-serif;
+            color: white;
+            text-align: center;
+            margin-top: 50px;
+            padding: 100px;
+            
+        }
+        #valentine-message {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        #yes-button, #no-button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-image: url("hart.webp");
+        }
+        #no-button:hover {
+            animation: enlarge 1s infinite; /* Infinite animation */
+        }
+        #result {
+            font-size: 20px;
+            margin-top: 20px;
+        }
+        @keyframes enlarge {
+            0% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        
+
+    </style>
+</head>
+<body>
+    <div id="valentine-message">Will you be my valentine?</div>
+    <button id="yes-button">Yes</button>
+    <button id="no-button">No</button>
+    <div id="result"></div>
+    <div class="image-container"></div>
+
+    <script>
+        const yesButton = document.getElementById('yes-button');
+        const resultDiv = document.getElementById('result');
+
+        // Array of image URLs
+        const imageUrls = [
+            'hart.gif',
+        
+        ];
+        yesButton.addEventListener('click', () => {
+            // Clear existing content
+            resultDiv.innerHTML = '';
+
+            // Create and append each image
+ 
+            imageUrls.forEach((url) => {
+                const image = document.createElement('img');
+                image.style.width = '200px'; // Set the desired width
+                image.style.height = 'auto'; // Maintain aspect ratio
+                image.src = url;
+                resultDiv.innerHTML = '<p style="color: black;">Send me where you want to go. lesg, my aphrodite. see you!!🥺💗</p>';
+                image.classList.add('valentine-image'); // Add the class
+                resultDiv.appendChild(image);
+                
+                
+            });
+        });
+    </script>
+</body>
+</html>
